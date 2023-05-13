@@ -1,5 +1,6 @@
 import 'package:dont_fail/pages/homepage.dart';
 import 'package:dont_fail/pages/loginpage.dart';
+import 'package:dont_fail/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     // var s = "king";
     // const pii = 3.14;
     return MaterialApp(
+      //debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
@@ -24,8 +26,8 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(brightness: Brightness.dark),
       routes: {
         "/": (context) => Loginpage(),
-        "/home": (context) => Homepage(),
-        "/login": (context) => Loginpage()
+        MyRoutes.homeRoute: (context) => Homepage(),
+        MyRoutes.loginRoute: (context) => Loginpage()
       },
     );
   }
